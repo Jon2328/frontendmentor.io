@@ -1,0 +1,28 @@
+.cta-wrapper {
+  padding: 0px 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tick-box {
+    text-align: left;
+}
+
+.tick-box > div {
+  margin-bottom: 10px;
+}
+
+.tick-box  img {
+    margin-right: 10px;
+}
+
+.cta-btn {
+  background-color: var(--textAndCtaBackground);
+  color: #ffffff;
+  border-radius: 25px;
+  width: 45%;
+  height: 50px;
+  align-self: center;
+  cursor: pointer;
+}

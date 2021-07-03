@@ -1,0 +1,7 @@
+.top-text-wrapper > h1 {
+    padding-top: 2vh;
+    color: var(--textAndCtaBackground);
+    font-weight: bold;
+    position: relative;
+    z-index: 4;
+  }

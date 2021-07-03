@@ -1,0 +1,63 @@
+.setting-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 50px;
+    margin-right: 5.5%;
+    padding: 0px 10%;
+  }
+
+  .setting-wrapper > span {
+    padding: 0px 2.5%;
+    font-size: 12px;
+    align-self: center;
+  }
+
+  .monthlySwitch[type=checkbox]{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+  
+  .monthlySwitchLabel {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 60px;
+    height: 30px;
+    background: var(--toggleBackground);
+    display: block;
+    border-radius: 100px;
+    position: relative;
+  }
+  
+  .monthlySwitchLabel:after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 90px;
+    transition: 0.3s;
+  }
+  
+  .monthlySwitch:checked + .monthlySwitchLabel {
+    background: var(--sliderBar);
+  }
+  
+  .monthlySwitch:checked + .monthlySwitchLabel:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+  }
+  
+  .monthlySwitchLabel:active:after {
+    width: 26px;
+  }
+
+  .discount-box {
+    color: var(--discountText);
+    background-color: var(--discountBackground);
+    padding: 4px !important;
+    border-radius: 25px;
+  }

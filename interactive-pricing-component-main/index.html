@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet"  href="./css/main.css">
+  <link rel="stylesheet"  href="./css/top-text.css">
+  <link rel="stylesheet"  href="./css/info.css">
+  <link rel="stylesheet"  href="./css/slider.css">
+  <link rel="stylesheet"  href="./css/setting.css">
+  <link rel="stylesheet"  href="./css/cta.css">
+  <title>Frontend Mentor | Interactive pricing component</title>
+
+</head>
+<body>
+  <img class="bg-pattern" src="images/bg-pattern.svg"></img>
+  <div class="container">
+    <img class="circles-pattern" src="images/pattern-circles.svg"></img>
+    <div class="top-text-wrapper">
+      <h1 class="thick-font">Simple, traffic-based pricing</h1>
+      <p>Sign-up for our 30-day trial. No credit card required.</p>
+    </div>
+    <div class="pricing-box">
+
+      <div class="info-wrapper">
+        <span class="pageview-text thick-font" id="pageview-text">100K PAGEVIEWS</span>
+        <div class="price-wrapper">
+          <span id="price-text" class="bold-price thick-font">$16.00</span>
+          <span>/ month</span>
+        </div>
+      </div>
+
+      <div class="slider-wrapper">
+        <input type="range" min="1" max="100" value="50" class="slider" id="slider" oninput="rangeInput(event)">
+      </div>
+
+      <div class="setting-wrapper">
+        <span>Monthly Billing</span>
+        <input type="checkbox" id="monthlySwitch" class="monthlySwitch" />
+        <label for="monthlySwitch" class="monthlySwitchLabel">Toggle</label>
+        <span>Yearly Billing</span>
+        <span class="discount-box">25% discount</span>
+      </div>
+      
+      <hr>
+
+      <div class="cta-wrapper">
+        <div class="tick-box">
+          <div>
+            <img src="/images/icon-check.svg">
+            <span>Unlimited websites</span>
+          </div>
+          <div>
+            <img src="/images/icon-check.svg">
+            <span>100% data ownership</span>
+          </div>
+          <div>
+            <img src="/images/icon-check.svg">
+            <span>Email reports</span>
+          </div>
+        </div>
+        <button class="cta-btn">Start my trial</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Simple, traffic-based pricing
+  Sign-up for our 30-day trial. No credit card required. 
+
+  Pageviews
+  $ /month
+
+  Monthly Billing
+  Yearly Billing 25% discount
+
+  Unlimited websites
+  100% data ownership
+  Email reports
+
+  Start my trial -->
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.frontendmentor.io/profile/Jon2328">Jon</a>.
+  </div>
+
+  <script>
+    function rangeInput(event) {
+      // console.log(event)
+      const max = event.target.max
+      const min = event.target.min
+      const value = event.target.value
+      const pageView = document.getElementById('pageview-text')
+      const price = document.getElementById('price-text')
+      const defaultMaxView = 200 // in thousand
+      const defaultMaxPrice = 32 // in dollar
+
+      const totalCost = (defaultMaxPrice * (value / 100)).toFixed(2)
+
+      
+      pageView.innerText = Math.round(defaultMaxView * (value / 100)) + 'K PAGEVIEWS'
+      price.innerText = '$' + totalCost
+
+
+      event.target.style.background = 'linear-gradient(to right, hsl(174, 77%, 80%) 0%, hsl(174, 77%, 80%) ' + value + '%, hsl(224, 65%, 95%) ' + value + '%, hsl(224, 65%, 95%) 100%)'
+    }
+  </script> 
+</body>
+</html>
