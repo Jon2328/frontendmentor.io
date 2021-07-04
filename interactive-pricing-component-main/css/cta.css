@@ -26,3 +26,19 @@
   align-self: center;
   cursor: pointer;
 }
+
+
+@media only screen and (max-width: 475px) {
+  .cta-wrapper {
+    flex-direction: column;
+  }
+
+  .tick-box {
+    text-align: center;
+    margin: 0px 0px 25px;
+  }
+
+  .cta-btn {
+    width: 80%;
+  }
+}

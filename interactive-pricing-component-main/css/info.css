@@ -16,8 +16,16 @@
     flex-direction: row;
   }
 
+  .price-wrapper-mobile {
+    display: none;
+  }
+
   .price-wrapper > span {
       align-self: center;
+  }
+
+  .price-wrapper-mobile > span {
+    align-self: center;
   }
 
   .bold-price {
@@ -25,4 +33,19 @@
       font-size: 40px;
       margin-right: 10px;
       color: hsl(227, 35%, 25%)
+  }
+
+  @media only screen and (max-width: 475px) {
+    .info-wrapper {
+      flex-direction: column;
+    }
+
+    .price-wrapper {
+      display: none;
+    }
+
+    .price-wrapper-mobile {
+      display: flex;
+      justify-content: center;
+    }
   }

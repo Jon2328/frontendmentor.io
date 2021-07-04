@@ -53,3 +53,9 @@
   .slider::-moz-range-thumb:active {
     background-color: hsl(174, 82%, 29%);
   }
+
+  @media only screen and (max-width: 475px) { 
+    .slider-wrapper { 
+      margin-bottom: 40px;
+    }
+  }

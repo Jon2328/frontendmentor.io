@@ -11,7 +11,7 @@
   <link rel="stylesheet"  href="./css/slider.css">
   <link rel="stylesheet"  href="./css/setting.css">
   <link rel="stylesheet"  href="./css/cta.css">
-  <title>Frontend Mentor | Interactive pricing component</title>
+  <title>Interactive pricing component | by Jon</title>
 
 </head>
 <body>
@@ -20,7 +20,10 @@
     <img class="circles-pattern" src="images/pattern-circles.svg"></img>
     <div class="top-text-wrapper">
       <h1 class="thick-font">Simple, traffic-based pricing</h1>
-      <p>Sign-up for our 30-day trial. No credit card required.</p>
+      <div>
+        <span>Sign-up for our 30-day trial.</span>
+        <span>&nbsp;No credit card required.</span>
+      </div>
     </div>
     <div class="pricing-box">
 
@@ -36,12 +39,17 @@
         <input type="range" min="1" max="100" value="50" class="slider" id="slider" oninput="rangeInput(event)">
       </div>
 
+      <div class="price-wrapper-mobile">
+        <span id="price-text-mobile" class="bold-price thick-font">$16.00</span>
+        <span>/ month</span>
+      </div>
+
       <div class="setting-wrapper">
         <span>Monthly Billing</span>
-        <input type="checkbox" id="monthlySwitch" class="monthlySwitch" />
+        <input type="checkbox" id="monthlySwitch" class="monthlySwitch" onchange="MonthlyCheck(event)" />
         <label for="monthlySwitch" class="monthlySwitchLabel">Toggle</label>
         <span>Yearly Billing</span>
-        <span class="discount-box">25% discount</span>
+        <span class="discount-box"></span>
       </div>
       
       <hr>
@@ -91,20 +99,108 @@
       // console.log(event)
       const max = event.target.max
       const min = event.target.min
-      const value = event.target.value
+      const value = Math.round(event.target.value)
       const pageView = document.getElementById('pageview-text')
       const price = document.getElementById('price-text')
+      const mobilePrice = document.getElementById('price-text-mobile')
+      const monthlySwitch = document.getElementById('monthlySwitch')
       const defaultMaxView = 200 // in thousand
       const defaultMaxPrice = 32 // in dollar
 
-      const totalCost = (defaultMaxPrice * (value / 100)).toFixed(2)
-
+      if (value >= 0 && value < 20) {
+        pageView.innerText = '10K PAGEVIEWS'
+        if(monthlySwitch.checked) {
+          price.innerText = `$${8 * 0.75}.00`
+          mobilePrice.innerText = `$${8 * 0.75}.00`
+        }else {
+          price.innerText = '$8.00'
+          mobilePrice.innerText = '$8.00'
+        }
+      }else if (value >= 20 && value < 39) {
+        pageView.innerText = '50K PAGEVIEWS'
+        if(monthlySwitch.checked) {
+          price.innerText = `$${12 * 0.75}.00 `
+          mobilePrice.innerText = `$${12 * 0.75}.00 `
+        }else {
+          price.innerText = '$12.00'
+          mobilePrice.innerText = '$12.00'
+        }
+      }else if (value >= 40 && value < 59) {
+        pageView.innerText = '100K PAGEVIEWS'
+        if(monthlySwitch.checked) {
+          price.innerText = `$${16 * 0.75}.00`
+          mobilePrice.innerText = `$${16 * 0.75}.00`
+        }else {
+          price.innerText = '$16.00'
+          mobilePrice.innerText = '$16.00'
+        }
+      }else if (value >= 60 && value < 79) {
+         pageView.innerText = '500K PAGEVIEWS'
+        if(monthlySwitch.checked) {
+          price.innerText = `$${24 * 0.75}.00`
+          mobilePrice.innerText = `$${24 * 0.75}.00`
+        }else {
+          price.innerText = '$24.00'
+          mobilePrice.innerText = '$24.00'
+        }
+      }else if(value >= 80) {
+        pageView.innerText = '1M PAGEVIEWS'
+        if(monthlySwitch.checked) {
+          price.innerText = `$${36 * 0.75}.00`
+          mobilePrice.innerText = `$${36 * 0.75}.00`
+        }else {
+          price.innerText = '$36.00'
+          mobilePrice.innerText = '$36.00'
+        }
+      }
       
-      pageView.innerText = Math.round(defaultMaxView * (value / 100)) + 'K PAGEVIEWS'
-      price.innerText = '$' + totalCost
+      // pageView.innerText = Math.round(defaultMaxView * (value / 100)) + 'K PAGEVIEWS'
+      // price.innerText = '$' + totalCost
 
 
       event.target.style.background = 'linear-gradient(to right, hsl(174, 77%, 80%) 0%, hsl(174, 77%, 80%) ' + value + '%, hsl(224, 65%, 95%) ' + value + '%, hsl(224, 65%, 95%) 100%)'
+    }
+
+    function MonthlyCheck(event) {
+      let value = document.getElementById('slider').value
+      const price = document.getElementById('price-text')
+      const mobilePrice = document.getElementById('price-text-mobile')
+      
+      if(event.target.checked) {
+        if (value >= 0 && value < 20) {
+            price.innerText = `$${8 * 0.75}.00`
+            mobilePrice.innerText = `$${8 * 0.75}.00`
+        }else if (value >= 20 && value < 39) {
+            price.innerText = `$${12 * 0.75}.00 `
+            mobilePrice.innerText = `$${12 * 0.75}.00 `
+        }else if (value >= 40 && value < 59) {
+            price.innerText = `$${16 * 0.75}.00`
+            mobilePrice.innerText = `$${16 * 0.75}.00`
+        }else if (value >= 60 && value < 79) {
+            price.innerText = `$${24 * 0.75}.00`
+            mobilePrice.innerText = `$${24 * 0.75}.00`
+        }else if(value >= 80) {
+            price.innerText = `$${36 * 0.75}.00`
+            mobilePrice.innerText = `$${36 * 0.75}.00`
+        }
+      } else {
+        if (value >= 0 && value < 20) {
+            price.innerText = '$8.00'
+            mobilePrice.innerText = '$8.00'
+        }else if (value >= 20 && value < 39) {
+            price.innerText = '$12.00'
+            mobilePrice.innerText = '$12.00'
+        }else if (value >= 40 && value < 59) {
+            price.innerText = '$16.00'
+            mobilePrice.innerText = '$16.00'
+        }else if (value >= 60 && value < 79) {
+            price.innerText = '$24.00'
+            mobilePrice.innerText = '$24.00'
+        }else if(value >= 80) {
+            price.innerText = '$36.00'
+            mobilePrice.innerText = '$36.00'
+        }
+      }
     }
   </script> 
 </body>
