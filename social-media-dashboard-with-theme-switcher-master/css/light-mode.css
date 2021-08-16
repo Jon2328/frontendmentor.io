@@ -1,0 +1,28 @@
+body {
+  color: var(--veryDarkBlue);
+  background-color: #ffffff;
+}
+
+.top-left > p {
+  color: var(--darkGrayBlue)
+}
+
+.top-right > p {
+  color: var(--darkGrayBlue)
+}
+
+.mid-content-box {
+  background-color: var(--lightGrayBlue)
+}
+
+.bot-content-box {
+  background-color: var(--lightGrayBlue)
+}
+
+.bot-container > h2 {
+  color: var(--darkGrayBlue)
+}
+
+.bot-content-top > p {
+  color: var(--darkGrayBlue)
+}

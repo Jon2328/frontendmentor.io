@@ -1,0 +1,45 @@
+.attribution { font-size: 11px; text-align: center; margin-top: 150px; }
+.attribution a { color: hsl(228, 96%, 81%); }
+:root {
+  --limeGreen: hsl(163, 72%, 41%);
+  --brightRed: hsl(356, 69%, 56%);
+  --borderFacebook: hsl(208, 92%, 53%);
+  --borderTwitter: hsl(203, 89%, 53%);
+  --borderInstagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+  --borderYouTube: hsl(348, 97%, 39%);
+
+  --darkToggleBG: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+  --lightToggleBG:  hsl(230, 22%, 74%);
+
+  --darkBlue: hsl(230, 17%, 14%);
+  --darkBlueTopBG: hsl(232, 19%, 15%);
+  --darkBlueCardBG: hsl(228, 28%, 20%);
+  --darkBlueText: hsl(228, 34%, 66%);
+
+  --paelBlueTopBG: hsl(225, 100%, 98%);
+  --lightGrayBlue:  hsl(227, 47%, 96%);
+  --darkGrayBlue: hsl(228, 12%, 44%);
+  --veryDarkBlue:  hsl(230, 17%, 14%);
+}
+
+body {
+    font-family: 'inter';
+    font-size: 14px;
+    padding: 10px 25px;
+    box-sizing: border-box;
+    max-width: 1200px;
+    margin: 0px auto;
+    background-color: var(--darkBlue);
+    color: #FFFFFF;
+}
+
+@font-face {
+  font-family: 'inter';
+  src: url('../font/inter-font.ttf');
+}
+
+@media only screen and (max-width: 800px) {
+  .attribution {
+    margin-top: 25px;
+  }
+}

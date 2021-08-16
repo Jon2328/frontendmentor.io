@@ -1,0 +1,144 @@
+.mid-container {
+  display: flex;
+  margin-top: 50px;
+}
+
+.mid-content-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0px 1%;
+  background-color: var(--darkBlueCardBG);
+  border-radius: 5px;
+  padding: 30px 0px 20px;
+}
+
+.mid-content-box:nth-child(1) {
+  margin: 0px 1% 0px 0px
+}
+
+.mid-content-box:nth-child(4) {
+  margin: 0px 0px 0px 1%
+}
+
+.mid-content-box.fb{
+  border-top: 4px solid var(--borderFacebook)
+}
+
+.mid-content-box.twitter{
+  border-top: 4px solid var(--borderTwitter)
+}
+
+.mid-content-box.ig{
+  margin: 4px 1% 0px 1%;
+  border-radius: 0px;
+}
+
+.mid-content-box.ig::after{
+  content: '';
+  position: absolute;
+  top: -4px;
+  background-image: var(--borderInstagram);
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.mid-content-box.youtube{
+  border-top: 4px solid var(--borderYouTube)
+}
+
+
+.social-media-container {
+  display: flex;
+}
+
+.social-media-container > span {
+  margin-left: 10px;
+  color: var(--darkBlueText);
+  align-self: center;
+}
+
+.amount {
+  font-weight: bold;
+  font-size: 4em;
+  margin: 25px 0px 0px;
+}
+
+.follower-text {
+  text-transform: uppercase;
+  color: var(--darkBlueText);
+  letter-spacing: 4px;
+  margin: 0px 0px 25px
+}
+
+.follower-movement-container {
+  align-items: center;
+  display: flex;
+  font-size: 0.75em;
+}
+
+.follower-movement-container > img {
+  width: 7.5px;
+}
+
+.follower-gain {
+  color: var(--limeGreen);
+  font-weight: 600;
+  margin: 0px 0px 0px 5px
+}
+
+.follower-lose {
+  color: var(--brightRed);
+  font-weight: 600;
+  margin: 0px 0px 0px 5px
+}
+
+@media only screen and (max-width: 800px) {
+  .mid-container {
+    flex-wrap: wrap;
+  }
+
+  .mid-content-box {
+    width: 45%;
+    margin: 0px 1.5%;
+  }
+
+  .mid-content-box:nth-child(1) {
+    margin: 0px 1.5%;
+  }
+
+  .mid-content-box:nth-child(4) {
+    margin: 20px 1.5%;
+  }
+
+  .mid-content-box.ig {
+    margin: 24px 1.5%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .mid-container {
+    margin-top: 25px;
+  }
+
+  .mid-content-box {
+    width: 100%;
+    margin: 10px 0px;
+  }
+
+  .mid-content-box:nth-child(1) {
+    margin: 10px 0px;
+  }
+
+  .mid-content-box:nth-child(4) {
+    margin: 10px 0px;
+  }
+
+  .mid-content-box.ig {
+    margin: 24px 0px;
+  }
+}
